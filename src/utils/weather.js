@@ -8,7 +8,10 @@ const weather =(address ,callback)=>{
         callback('Unable to connect the weather services',undefined)
       }
       else{
+        if(data.body.current!==undefined)
         callback(undefined,data)
+        else
+        callback('Location not found, Please enter a valid location.')
       }
     })
   }
